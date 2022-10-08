@@ -1,0 +1,23 @@
+<?php
+											include('db_con1.php');
+												$query="select category.employee_id,
+				category.cat_id,
+				category.category_name,
+				category.categery_image,
+				category.date,
+				sab_categories.s_id,
+				sab_categories.cat_id,
+				sab_categories.employee_id,
+				sab_categories.sab_title
+				
+from category inner join sab_categories on category.employee_id=sab_categories.employee_id  ORDER BY sab_categories.s_id ASC";
+	$query=mysql_query($query);
+	while($show=mysql_fetch_array($query))
+		{
+	$employee_id=$show['employee_id'];
+	$s_id=$show['s_id'];
+$cat_id=$show['cat_id'];
+$category_name=$show['category_name'];
+$sab_title=$show['sab_title'];
+		
+?>
